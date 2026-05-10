@@ -1,0 +1,16 @@
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+charitap_receipts = "Dtus14VRphsjYnPsT4F1eUeTN88dEAGHGsdcee6vTVgm"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "Localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "npm run anchor:test"

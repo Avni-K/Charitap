@@ -1,0 +1,228 @@
+{
+    "excludePatterns": [
+        "instagram.com",
+        "facebook.com",
+        "twitter.com",
+        "x.com",
+        "reddit.com",
+        "youtube.com",
+        "gmail.com",
+        "mail.google.com",
+        "outlook.com",
+        "linkedin.com",
+        "tiktok.com",
+        "snapchat.com",
+        "whatsapp.com",
+        "messenger.com",
+        "discord.com",
+        "slack.com",
+        "zoom.us",
+        "meet.google.com",
+        "teams.microsoft.com"
+    ],
+    "checkoutPatterns": [
+        {
+            "url": "/checkout",
+            "confidence": 0.95
+        },
+        {
+            "url": "/payment",
+            "confidence": 0.95
+        },
+        {
+            "url": "/billing",
+            "confidence": 0.9
+        },
+        {
+            "url": "/order",
+            "confidence": 0.9
+        },
+        {
+            "url": "/finalize",
+            "confidence": 0.85
+        },
+        {
+            "url": "/place-order",
+            "confidence": 0.95
+        },
+        {
+            "url": "/confirm-order",
+            "confidence": 0.95
+        }
+    ],
+    "priceSelectors": [
+        {
+            "selector": ".total",
+            "parser": "currency"
+        },
+        {
+            "selector": ".grand-total",
+            "parser": "currency"
+        },
+        {
+            "selector": "[data-testid='order-total']",
+            "parser": "currency"
+        },
+        {
+            "selector": "[data-test='order-total']",
+            "parser": "currency"
+        },
+        {
+            "selector": ".cart-total",
+            "parser": "currency"
+        },
+        {
+            "selector": "#order-summary-total",
+            "parser": "currency"
+        },
+        {
+            "selector": ".payment-amount",
+            "parser": "currency"
+        },
+        {
+            "selector": ".order-total",
+            "parser": "currency"
+        },
+        {
+            "selector": "#grand-total",
+            "parser": "currency"
+        },
+        {
+            "selector": ".checkout-total",
+            "parser": "currency"
+        },
+        {
+            "selector": "[class*='total']",
+            "parser": "currency"
+        },
+        {
+            "selector": "[id*='total']",
+            "parser": "currency"
+        }
+    ],
+    "platforms": {
+        "shopify": {
+            "identifier": "cdn.shopify.com",
+            "priceSelector": ".payment-due__price, .total-line__price, [data-order-summary-section='payment-lines'] .total-line__price",
+            "submitSelector": "#continue_button, button[type='submit']",
+            "description": "Shopify stores (millions globally)"
+        },
+        "woocommerce": {
+            "identifier": "woocommerce",
+            "priceSelector": ".order-total .amount, .cart-subtotal .amount, #order_review .order-total bdi",
+            "submitSelector": "#place_order, button[name='woocommerce_checkout_place_order']",
+            "description": "WooCommerce (WordPress e-commerce)"
+        },
+        "amazon": {
+            "identifier": "amazon.com",
+            "priceSelector": "#grand-total-price, .grand-total-price, #subtotals-marketplace-table .grand-total-price",
+            "submitSelector": "input[name='placeYourOrder1'], .place-your-order-button",
+            "description": "Amazon"
+        },
+        "ebay": {
+            "identifier": "ebay.com",
+            "priceSelector": ".order-total, #total, .cart-total",
+            "submitSelector": "button[data-test-id='ADD_TO_CART_BTN']",
+            "description": "eBay"
+        },
+        "etsy": {
+            "identifier": "etsy.com",
+            "priceSelector": ".total-price, #total-price, [data-total-price]",
+            "submitSelector": "button[value='Review order']",
+            "description": "Etsy"
+        },
+        "walmart": {
+            "identifier": "walmart.com",
+            "priceSelector": ".order-total, [data-automation-id='order-total']",
+            "submitSelector": "button[data-tl-id='cxo-placeOrderButton']",
+            "description": "Walmart"
+        },
+        "target": {
+            "identifier": "target.com",
+            "priceSelector": "[data-test='cartItem-price'], .h-text-grayDarkest",
+            "submitSelector": "button[data-test='placeOrderButton']",
+            "description": "Target"
+        },
+        "bestbuy": {
+            "identifier": "bestbuy.com",
+            "priceSelector": ".order-summary__price, .item-price",
+            "submitSelector": "button[data-track='Checkout - Place Order']",
+            "description": "Best Buy"
+        },
+        "alibaba": {
+            "identifier": "alibaba.com",
+            "priceSelector": ".amount, .total-amount",
+            "submitSelector": ".place-order-btn",
+            "description": "Alibaba"
+        },
+        "aliexpress": {
+            "identifier": "aliexpress.com",
+            "priceSelector": ".order-total, .total-price",
+            "submitSelector": ".place-order-btn",
+            "description": "AliExpress"
+        },
+        "magento": {
+            "identifier": "Mage.Cookies",
+            "priceSelector": ".grand.totals .price, .cart-totals .grand.totals .amount .price",
+            "submitSelector": "button[title='Place Order'], .action.primary.checkout",
+            "description": "Magento stores"
+        },
+        "bigcommerce": {
+            "identifier": "bigcommerce",
+            "priceSelector": ".cart-total-value, .cart-total-grandTotal",
+            "submitSelector": "#checkout-customer-continue",
+            "description": "BigCommerce stores"
+        },
+        "squarespace": {
+            "identifier": "squarespace",
+            "priceSelector": ".cart-row-total, .order-total",
+            "submitSelector": ".sqs-add-to-cart-button",
+            "description": "Squarespace Commerce"
+        },
+        "stripe": {
+            "identifier": "js.stripe.com",
+            "priceSelector": ".OrderDetails-totalAmount, [data-testid='total-amount']",
+            "submitSelector": "button[type='submit']",
+            "description": "Stripe Checkout"
+        },
+        "paypal": {
+            "identifier": "paypal.com",
+            "priceSelector": "#totalAmount, .grandTotal",
+            "submitSelector": "#confirmButtonTop, #payment-submit-btn",
+            "description": "PayPal Checkout"
+        }
+    },
+    "internationalPlatforms": {
+        "rakuten": {
+            "identifier": "rakuten.co.jp",
+            "description": "Rakuten (Japan)"
+        },
+        "mercadolibre": {
+            "identifier": "mercadolibre.com",
+            "description": "MercadoLibre (Latin America)"
+        },
+        "flipkart": {
+            "identifier": "flipkart.com",
+            "description": "Flipkart (India)"
+        },
+        "lazada": {
+            "identifier": "lazada.com",
+            "description": "Lazada (Southeast Asia)"
+        },
+        "jd": {
+            "identifier": "jd.com",
+            "description": "JD.com (China)"
+        }
+    },
+    "currencySymbols": {
+        "$": "USD",
+        "€": "EUR",
+        "£": "GBP",
+        "¥": "JPY/CNY",
+        "₹": "INR",
+        "₽": "RUB",
+        "R$": "BRL",
+        "A$": "AUD",
+        "C$": "CAD"
+    }
+}

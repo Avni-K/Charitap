@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "Round‑Up Charity",
+  "version": "1.0",
+  "description": "Round up your online payments and donate the spare change.",
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "http://localhost:3000/*",
+      "https://localhost:3000/*",
+      "http://127.0.0.1:3000/*",
+      "https://127.0.0.1:3000/*",
+      "https://*.vercel.app/*"
+    ]
+  },
+  "host_permissions": [
+    "http://localhost:3000/*",
+    "http://127.0.0.1:3000/*",
+    "http://localhost:3001/*",
+    "http://127.0.0.1:3001/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "exclude_matches": [
+        "http://localhost:3000/*",
+        "https://localhost:3000/*",
+        "http://127.0.0.1:3000/*",
+        "https://127.0.0.1:3000/*",
+        "https://*.vercel.app/*"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/charity.png",
+        "patterns.json",
+        "widget.css",
+        "icons/icon16.png",
+        "icons/icon48.png",
+        "icons/icon128.png"
+      ],
+      "matches": [
+        "http://localhost:3000/*",
+        "http://127.0.0.1:3000/*",
+        "<all_urls>"
+      ]
+    }
+  ]
+}

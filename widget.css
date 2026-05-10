@@ -1,0 +1,402 @@
+/* ===================================================================
+   Charitap Widget Styles - Responsive & Accessible
+   =================================================================== */
+
+/* Widget Container */
+.charitap-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.charitap-widget.charitap-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Main Container */
+.charitap-container {
+  position: relative;
+  background: rgba(252, 248, 241, 0.98); /* Warm cream from website */
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(98, 111, 71, 0.15), 0 2px 8px rgba(98, 111, 71, 0.08);
+  padding: 24px;
+  min-width: 280px;
+  max-width: 360px;
+  border: 1px solid rgba(98, 111, 71, 0.2); /* Olive border */
+}
+
+/* Dark Theme */
+.charitap-dark-theme .charitap-container {
+  background: rgba(98, 111, 71, 0.95); /* Dark olive for dark theme */
+  border-color: rgba(240, 187, 120, 0.2);
+  color: #FCF8F1;
+}
+
+/* Close Button */
+.charitap-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: rgba(98, 111, 71, 0.1); /* Soft olive */
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  color: #626F47; /* Dark olive */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.charitap-close:hover {
+  background: rgba(98, 111, 71, 0.2);
+  transform: scale(1.1);
+}
+
+.charitap-dark-theme .charitap-close {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ccc;
+}
+
+.charitap-dark-theme .charitap-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Content Area */
+.charitap-content {
+  text-align: center;
+}
+
+/* Icon */
+.charitap-icon-wrapper {
+  margin-bottom: 16px;
+}
+
+.charitap-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  animation: charitap-bounce 0.6s ease;
+}
+
+@keyframes charitap-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Title */
+.charitap-title {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #626F47; /* Dark olive */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.3;
+}
+
+.charitap-dark-theme .charitap-title {
+  color: #ffffff;
+}
+
+/* Amount */
+.charitap-amount {
+  margin: 12px 0;
+  font-size: 36px;
+  font-weight: 800;
+  color: #F0BB78; /* Warm gold accent */
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* Subtitle */
+.charitap-subtitle {
+  margin: 8px 0 20px 0;
+  font-size: 14px;
+  color: #7a886d; /* Muted olive */
+  line-height: 1.4;
+}
+
+.charitap-dark-theme .charitap-subtitle {
+  color: #F5ECD5; /* Sand color for dark theme */
+}
+
+/* Actions */
+.charitap-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.charitap-btn {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: inherit;
+}
+
+.charitap-btn-yes {
+  background: linear-gradient(135deg, #626F47 0%, #7a886d 100%); /* Olive gradient */
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(98, 111, 71, 0.3);
+}
+
+.charitap-btn-yes:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(98, 111, 71, 0.4);
+}
+
+.charitap-btn-yes:active {
+  transform: translateY(0);
+}
+
+.charitap-btn-no {
+  background: rgba(245, 236, 213, 0.8); /* Sand color */
+  color: #626F47; /* Olive text */
+}
+
+.charitap-dark-theme .charitap-btn-no {
+  background: rgba(240, 187, 120, 0.15); /* Gold tint */
+  color: #F5ECD5;
+}
+
+.charitap-btn-no:hover {
+  background: rgba(245, 236, 213, 1); /* Solid sand on hover */
+}
+
+.charitap-dark-theme .charitap-btn-no:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Button Icons */
+.charitap-btn-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Footer */
+.charitap-footer {
+  margin: 16px 0 0 0;
+  font-size: 11px;
+  color: #999;
+  text-align: center;
+}
+
+/* Success State */
+.charitap-success .charitap-container {
+  background: linear-gradient(135deg, #626F47 0%, #7a886d 100%); /* Olive gradient */
+  color: #ffffff;
+}
+
+.charitap-checkmark {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 36px;
+  line-height: 64px;
+  margin-bottom: 16px;
+  animation: charitap-checkmark-pop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes charitap-checkmark-pop {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.charitap-success .charitap-title {
+  color: #ffffff;
+}
+
+.charitap-success p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Error State */
+.charitap-error .charitap-container {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.charitap-error-icon {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 36px;
+  line-height: 64px;
+  margin-bottom: 16px;
+}
+
+.charitap-error .charitap-title {
+  color: #ffffff;
+}
+
+.charitap-error p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.charitap-close-error {
+  margin-top: 16px;
+  padding: 10px 24px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.charitap-close-error:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Loading State */
+.charitap-loading {
+  padding: 40px 20px;
+}
+
+.charitap-spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 16px;
+  border: 4px solid rgba(240, 187, 120, 0.2); /* Gold tint */
+  border-top-color: #F0BB78; /* Warm gold */
+  border-radius: 50%;
+  animation: charitap-spin 0.8s linear infinite;
+}
+
+@keyframes charitap-spin {
+  to { transform: rotate(360deg); }
+}
+
+.charitap-loading p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.charitap-dark-theme .charitap-loading p {
+  color: #aaa;
+}
+
+/* ===================================================================
+   RESPONSIVE STYLES
+   =================================================================== */
+
+/* Mobile (Portrait) */
+@media (max-width: 480px) {
+  .charitap-widget {
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+  }
+  
+  .charitap-container {
+    min-width: auto;
+    max-width: none;
+    padding: 20px;
+  }
+  
+  .charitap-amount {
+    font-size: 32px;
+  }
+  
+  .charitap-actions {
+    flex-direction: column;
+  }
+  
+  .charitap-btn {
+    width: 100%;
+  }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  .charitap-widget {
+    bottom: 16px;
+    right: 16px;
+  }
+  
+  .charitap-container {
+    max-width: 320px;
+  }
+}
+
+/* Desktop Large */
+@media (min-width: 1200px) {
+  .charitap-container {
+    max-width: 400px;
+    padding: 28px;
+  }
+  
+  .charitap-amount {
+    font-size: 40px;
+  }
+}
+
+/* ===================================================================
+   ACCESSIBILITY
+   =================================================================== */
+
+/* Focus styles */
+.charitap-btn:focus,
+.charitap-close:focus {
+  outline: 2px solid #F0BB78; /* Gold focus ring */
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .charitap-widget,
+  .charitap-icon,
+  .charitap-btn,
+  .charitap-close,
+  .charitap-checkmark,
+  .charitap-spinner {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .charitap-container {
+    border-width: 2px;
+  }
+  
+  .charitap-btn {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Print styles */
+@media print {
+  .charitap-widget {
+    display: none !important;
+  }
+}

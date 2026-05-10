@@ -1,0 +1,18 @@
+{
+  "name": "charity_vector_index",
+  "type": "vectorSearch",
+  "definition": {
+    "fields": [
+      {
+        "type": "vector",
+        "path": "embedding",
+        "numDimensions": 128,
+        "similarity": "cosine"
+      },
+      {
+        "type": "filter",
+        "path": "type"
+      }
+    ]
+  }
+}
